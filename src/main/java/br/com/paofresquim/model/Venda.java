@@ -32,8 +32,8 @@ public class Venda {
     private BigDecimal total;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "status_venda", nullable = false)
-    private StatusVenda statusVenda;
+    @Column(name = "status_venda")
+    private StatusVenda StatusVenda;
 
     @Column(name = "ultima_cobranca")
     private LocalDateTime ultimaCobranca;

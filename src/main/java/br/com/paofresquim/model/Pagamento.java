@@ -1,6 +1,7 @@
 package br.com.paofresquim.model;
 
 import br.com.paofresquim.enums.MeioPagamento;
+import br.com.paofresquim.enums.StatusVenda;
 import jakarta.persistence.*;
 import lombok.*;
 import java.math.BigDecimal;
