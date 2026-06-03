@@ -2,11 +2,15 @@ package br.com.paofresquim.model;
 
 import br.com.paofresquim.enums.NivelAcesso;
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = "usuario")
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class Usuario {
@@ -15,18 +19,14 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @OneToOne
-    @JoinColumn(name = "id_funcionario", nullable = false, unique = true)
-    private Funcionario funcionario;
+    @Column(name = "id_funcionario")
+    private Integer idFuncionario;
 
-    @Column(nullable = false, length = 255)
-    private String senha;
-
-    @Column(nullable = false, length = 80, unique = true)
     private String usuario;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "nivel_acesso", nullable = false)
-    private NivelAcesso nivelAcesso;
+    private String senha;
 
+    @Enumerated(EnumType.STRING)
+    @Column(name = "nivel_acesso")
+    private NivelAcesso nivelAcesso;
 }
