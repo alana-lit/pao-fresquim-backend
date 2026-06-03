@@ -72,7 +72,7 @@ public class AtestadoService {
     ) {
         atestado.setFuncionario(funcionario);
         atestado.setNome(request.getNome());
-        Base64.getDecoder().decode(request.getArquivo());
+        //Base64.getDecoder().decode(request.getArquivo());
         atestado.setArquivo(request.getArquivo());
         atestado.setDataInicio(request.getDataInicio());
         atestado.setDataFim(request.getDataFim());
