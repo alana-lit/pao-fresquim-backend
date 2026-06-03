@@ -6,7 +6,8 @@ import lombok.Getter;
 public enum StatusNotificacao {
 
     PENDENTE("Pendente"),
-    ENVIADA("Enviada"),
+    ENVIADO("Enviado"),
+    FALHA("Falha"),
     ERRO("Erro");
 
     private final String descricao;

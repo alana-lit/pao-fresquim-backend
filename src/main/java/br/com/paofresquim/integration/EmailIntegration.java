@@ -20,7 +20,7 @@ public class EmailIntegration {
 
     private final RestTemplate restTemplate = new RestTemplate();
 
-    @Value("${email.api.url:https://api.resend.com/emails}")
+    @Value("${email.api.url}")
     private String url;
 
     @Value("${email.api.key}")
