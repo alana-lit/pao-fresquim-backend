@@ -4,26 +4,31 @@ import br.com.paofresquim.enums.StatusNotificacao;
 import br.com.paofresquim.enums.TipoNotificacao;
 import jakarta.persistence.*;
 import lombok.*;
+
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "notificacao")
-@Data
+@Getter
+@Setter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class Notificacao {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "id_cliente", nullable = false)
+    @JoinColumn(name = "id_cliente")
     private Cliente cliente;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
     private TipoNotificacao tipo;
+
+    @Column
+    private Boolean cobranca;
 
     @Column(columnDefinition = "TEXT")
     private String mensagem;
@@ -32,7 +37,21 @@ public class Notificacao {
     private LocalDateTime dataEnvio;
 
     @Enumerated(EnumType.STRING)
-    @Column
     private StatusNotificacao status;
 
+    @Column(
+            name = "gateway_id",
+            columnDefinition = "TEXT"
+    )
+    private String gatewayId;
+
+    @Column(columnDefinition = "TEXT")
+    private String erro;
+
+    @Column(name = "http")
+    private Integer httpStatus;
+
+    @Column(name = "resposta_gateway",
+            columnDefinition = "TEXT")
+    private String respostaGateway;
 }

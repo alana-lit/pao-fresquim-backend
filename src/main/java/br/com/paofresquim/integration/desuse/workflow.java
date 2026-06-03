@@ -1,4 +1,4 @@
-package br.com.paofresquim.integration;
+package br.com.paofresquim.paofresquim.integration.desuse;
 
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
